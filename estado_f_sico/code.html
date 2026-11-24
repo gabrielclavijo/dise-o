@@ -1,0 +1,556 @@
+<!DOCTYPE html><html lang="es"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estado físico — Entreno</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'success': '#15803D',
+        'warning': '#B45309',
+        'info': '#0369A1',
+        'accent-mint': '#10B981',
+        'accent-coral': '#FF5722',
+        'accent-sky': '#0EA5E9',
+        'accent-amber': '#F59E0B',
+        'light-primary': '#006450',
+        'light-on-primary': '#FFFFFF',
+        'light-primary-container': '#007F66',
+        'light-on-primary-container': '#D0FFED',
+        'light-secondary': '#B02E00',
+        'light-on-secondary': '#FFFFFF',
+        'light-secondary-container': '#FC5929',
+        'light-on-secondary-container': '#541100',
+        'light-tertiary': '#005C8E',
+        'light-on-tertiary': '#FFFFFF',
+        'light-tertiary-container': '#2075AE',
+        'light-on-tertiary-container': '#EEF5FF',
+        'light-error': '#BA1A1A',
+        'light-on-error': '#FFFFFF',
+        'light-error-container': '#FFDAD6',
+        'light-on-error-container': '#93000A',
+        'light-background': '#F6FAF6',
+        'light-on-background': '#181D1B',
+        'light-surface': '#F6FAF6',
+        'light-surface-dim': '#D6DBD7',
+        'light-surface-bright': '#F6FAF6',
+        'light-surface-container-lowest': '#FFFFFF',
+        'light-surface-container-low': '#F0F5F1',
+        'light-surface-container': '#EAEFEB',
+        'light-surface-container-high': '#E5E9E5',
+        'light-surface-container-highest': '#DFE4E0',
+        'light-on-surface': '#181D1B',
+        'light-surface-variant': '#D9E5DF',
+        'light-on-surface-variant': '#3E4945',
+        'light-outline': '#6E7A74',
+        'light-outline-variant': '#BDC9C3',
+        'light-inverse-surface': '#2C322F',
+        'light-inverse-on-surface': '#EDF2EE',
+        'light-inverse-primary': '#76D8BB',
+        'dark-primary': '#76D8BB',
+        'dark-on-primary': '#00382B',
+        'dark-primary-container': '#007F66',
+        'dark-on-primary-container': '#D0FFED',
+        'dark-secondary': '#FFB5A0',
+        'dark-on-secondary': '#601500',
+        'dark-secondary-container': '#CA3701',
+        'dark-on-secondary-container': '#FFECE7',
+        'dark-tertiary': '#94CCFF',
+        'dark-on-tertiary': '#003352',
+        'dark-tertiary-container': '#2075AE',
+        'dark-on-tertiary-container': '#EEF5FF',
+        'dark-error': '#FFB4AB',
+        'dark-on-error': '#690005',
+        'dark-error-container': '#93000A',
+        'dark-on-error-container': '#FFDAD6',
+        'dark-background': '#0F1412',
+        'dark-on-background': '#DFE4E0',
+        'dark-surface': '#0F1412',
+        'dark-surface-dim': '#0F1412',
+        'dark-surface-bright': '#353A38',
+        'dark-surface-container-lowest': '#0A0F0D',
+        'dark-surface-container-low': '#181D1B',
+        'dark-surface-container': '#1C211F',
+        'dark-surface-container-high': '#262B29',
+        'dark-surface-container-highest': '#313633',
+        'dark-on-surface': '#DFE4E0',
+        'dark-surface-variant': '#3E4945',
+        'dark-on-surface-variant': '#BDC9C3',
+        'dark-outline': '#87938E',
+        'dark-outline-variant': '#3E4945',
+        'dark-inverse-surface': '#DFE4E0',
+        'dark-inverse-on-surface': '#2C322F',
+        'dark-inverse-primary': '#006B56',
+      },
+      borderRadius: {
+        'sm': '8px',
+        'DEFAULT': '12px',
+        'md': '14px',
+        'lg': '20px',
+        'xl': '28px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '16px',
+        'gutter-lg': '24px',
+        'gutter-xl': '32px',
+        'section': '40px',
+        'page-margin': '16px',
+      },
+      fontFamily: {
+        'display': ['"Mona Sans"', 'sans-serif'],
+        'headline': ['"Mona Sans"', 'sans-serif'],
+        'title': ['"Commissioner"', 'sans-serif'],
+        'body': ['"Commissioner"', 'sans-serif'],
+        'label': ['"Commissioner"', 'sans-serif'],
+        'mono': ['"Reddit Mono"', 'monospace'],
+      },
+      fontSize: {
+        'display-lg': ['40px', { lineHeight: '46px', letterSpacing: '-0.5px', fontWeight: '700' }],
+        'display-lg-mobile': ['30px', { lineHeight: '36px', letterSpacing: '-0.25px', fontWeight: '700' }],
+        'headline-lg': ['28px', { lineHeight: '34px', letterSpacing: '-0.25px', fontWeight: '700' }],
+        'headline-md': ['22px', { lineHeight: '28px', letterSpacing: '0px', fontWeight: '600' }],
+        'title-lg': ['18px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '600' }],
+        'title-md': ['16px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '600' }],
+        'body-lg': ['16px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-md': ['14px', { lineHeight: '21px', letterSpacing: '0px', fontWeight: '400' }],
+        'label-lg': ['14px', { lineHeight: '20px', letterSpacing: '0.1px', fontWeight: '600' }],
+        'label-md': ['12px', { lineHeight: '16px', letterSpacing: '0.2px', fontWeight: '600' }],
+        'mono-lg': ['20px', { lineHeight: '26px', letterSpacing: '0px', fontWeight: '600' }],
+        'mono-md': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '500' }],
+      },
+      transitionDuration: {
+        'state-change': '150ms',
+        'surface-enter': '220ms',
+        'surface-exit': '150ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'surface-enter': '0ms',
+        'surface-exit': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-exit': 'cubic-bezier(0.3, 0, 1, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link href="https://fonts.googleapis.com/css2?family=Mona+Sans:wght@600;700&amp;family=Commissioner:wght@400;600&amp;family=Reddit+Mono:wght@500;600&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+  <style>
+    .material-symbols-outlined { display: inline-block; width: 1em; height: 1em; line-height: 1 !important; box-sizing: content-box; overflow: hidden; white-space: nowrap; direction: ltr; vertical-align: middle; }
+    @keyframes pulsoFadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulsoRingDraw {
+      from { stroke-dashoffset: 251.2; }
+      to { stroke-dashoffset: 55.2; }
+    }
+    .anim-fade-up { animation: pulsoFadeUp 320ms cubic-bezier(0.2, 0, 0, 1) both; }
+    .anim-delay-1 { animation-delay: 60ms; }
+    .anim-delay-2 { animation-delay: 120ms; }
+    .anim-ring { animation: pulsoRingDraw 700ms cubic-bezier(0.2, 0, 0, 1) both; }
+    @media (prefers-reduced-motion: reduce) {
+      .anim-fade-up, .anim-ring { animation: none !important; }
+    }
+  </style>
+</head>
+<body class="bg-light-surface dark:bg-dark-surface text-light-on-surface dark:text-dark-on-surface antialiased">
+  <div class="min-h-[1024px] flex bg-light-surface dark:bg-dark-surface" data-stitch-vh="min-h-[1024px]===min-h-screen">
+
+    <!-- Barra lateral de navegación en escritorio -->
+    <aside class="hidden md:flex w-64 shrink-0 min-h-[1024px] flex-col justify-between p-gutter-md bg-light-surface-container-low dark:bg-dark-surface-container-low border-r border-light-outline-variant dark:border-dark-outline-variant" data-stitch-vh="min-h-[1024px]===min-h-screen">
+      <div class="flex flex-col gap-gutter-lg">
+        <div class="flex items-center gap-gutter-sm px-2 pt-1">
+          <span class="inline-flex items-center justify-center w-10 h-10 rounded-md bg-light-primary-container dark:bg-dark-primary-container text-light-on-primary-container dark:text-dark-on-primary-container" aria-hidden="true">
+            <span class="material-symbols-outlined text-[22px]" style="font-variation-settings: &#39;FILL&#39; 1;">bolt</span>
+          </span>
+          <span class="font-headline text-headline-md text-light-on-surface dark:text-dark-on-surface">Entreno</span>
+        </div>
+
+        <nav aria-label="Navegación principal de escritorio" class="flex flex-col gap-1">
+          <a href="../panel-escritorio/PanelEscritorio.html" class="flex items-center gap-gutter-sm px-3 py-2.5 rounded-md text-light-on-surface-variant dark:text-dark-on-surface-variant hover:bg-light-surface-container dark:hover:bg-dark-surface-container font-label text-label-lg transition-colors duration-state-change">
+            <span class="material-symbols-outlined text-[20px]" aria-hidden="true">dashboard</span>
+            <span>Panel general</span>
+          </a>
+          <a href="../estado-fisico/EstadoFisico.html" aria-current="page" class="flex items-center gap-gutter-sm px-3 py-2.5 rounded-md bg-light-surface-variant dark:bg-dark-surface-variant text-light-primary dark:text-dark-primary font-label text-label-lg">
+            <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: &#39;FILL&#39; 1;" aria-hidden="true">monitoring</span>
+            <span>Estado físico</span>
+          </a>
+          <a href="../importar-entrenamientos/ImportarEntrenamientos.html" class="flex items-center gap-gutter-sm px-3 py-2.5 rounded-md text-light-on-surface-variant dark:text-dark-on-surface-variant hover:bg-light-surface-container dark:hover:bg-dark-surface-container font-label text-label-lg transition-colors duration-state-change">
+            <span class="material-symbols-outlined text-[20px]" aria-hidden="true">sync_alt</span>
+            <span>Garmin y Strava</span>
+          </a>
+          <a href="../metas-deportivas/MetasDeportivas.html" class="flex items-center gap-gutter-sm px-3 py-2.5 rounded-md text-light-on-surface-variant dark:text-dark-on-surface-variant hover:bg-light-surface-container dark:hover:bg-dark-surface-container font-label text-label-lg transition-colors duration-state-change">
+            <span class="material-symbols-outlined text-[20px]" aria-hidden="true">flag</span>
+            <span>Metas deportivas</span>
+          </a>
+          <a href="../plan-entrenamiento/PlanEntrenamiento.html" class="flex items-center gap-gutter-sm px-3 py-2.5 rounded-md text-light-on-surface-variant dark:text-dark-on-surface-variant hover:bg-light-surface-container dark:hover:bg-dark-surface-container font-label text-label-lg transition-colors duration-state-change">
+            <span class="material-symbols-outlined text-[20px]" aria-hidden="true">calendar_month</span>
+            <span>Plan y pausas</span>
+          </a>
+          <a href="../perfil-salud/PerfilSalud.html" class="flex items-center gap-gutter-sm px-3 py-2.5 rounded-md text-light-on-surface-variant dark:text-dark-on-surface-variant hover:bg-light-surface-container dark:hover:bg-dark-surface-container font-label text-label-lg transition-colors duration-state-change">
+            <span class="material-symbols-outlined text-[20px]" aria-hidden="true">person</span>
+            <span>Perfil y salud</span>
+          </a>
+        </nav>
+      </div>
+
+      <a href="../perfil-salud/PerfilSalud.html" class="flex items-center gap-gutter-sm p-2.5 rounded-lg bg-light-surface-container-lowest dark:bg-dark-surface-container border border-light-outline-variant dark:border-dark-outline-variant hover:border-light-primary dark:hover:border-dark-primary transition-colors duration-state-change">
+        <img src="https://lh3.googleusercontent.com/aida/ALJJyrANlqWBEKvZ88Mht2MesmNNAzKjG8h7OywPwSl1ISiGTvGovI-zzQMSBgSeSef6AgO7iz6KK4Gkko0A_G9bSrWa7SmccU3yCQxmLmKu438P_bv02OYH0uZt_9FmDABgY3HFWSEZmhQy451r6pcuqDKL5sVtWmbW-n6kAsrsE2UGld6v2PnXvAvvRDx6XCmuW_AQMYGtsMJskC4QRlZuQQkHSRU56AvN2NlUtXRiLdUfrtdhkFJ4" alt="Foto de Sofía Navarro" data-user-avatar class="w-10 h-10 rounded-full object-cover shrink-0">
+        <div class="min-w-0">
+          <span data-user-name class="font-title text-title-md text-light-on-surface dark:text-dark-on-surface block">Sofía Navarro</span>
+          <span class="font-body text-body-md text-light-on-surface-variant dark:text-dark-on-surface-variant block">Z2: 132–145 lpm</span>
+        </div>
+      </a>
+    </aside>
+
+    <div class="flex-1 flex flex-col min-w-0">
+
+    <!-- Header compartido -->
+    <header class="sticky top-0 z-30 flex items-center justify-between gap-gutter-md px-page-margin py-3 bg-light-surface dark:bg-dark-surface border-b border-light-outline-variant dark:border-dark-outline-variant">
+      <div class="flex items-center gap-gutter-sm">
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-md bg-light-primary-container dark:bg-dark-primary-container text-light-on-primary-container dark:text-dark-on-primary-container" aria-hidden="true">
+          <span class="material-symbols-outlined text-[22px]" style="font-variation-settings: &#39;FILL&#39; 1;">bolt</span>
+        </span>
+        <span class="font-headline text-title-lg text-light-on-surface dark:text-dark-on-surface">Entreno</span>
+      </div>
+      <div class="flex items-center gap-gutter-sm">
+        <a href="../perfil-salud/PerfilSalud.html" class="inline-flex items-center gap-2 pl-1 pr-3 py-1 rounded-full bg-light-surface-container dark:bg-dark-surface-container border border-light-outline-variant dark:border-dark-outline-variant hover:border-light-primary dark:hover:border-dark-primary transition-colors duration-state-change focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-primary dark:focus-visible:ring-dark-primary">
+          <img src="https://lh3.googleusercontent.com/aida/ALJJyrANlqWBEKvZ88Mht2MesmNNAzKjG8h7OywPwSl1ISiGTvGovI-zzQMSBgSeSef6AgO7iz6KK4Gkko0A_G9bSrWa7SmccU3yCQxmLmKu438P_bv02OYH0uZt_9FmDABgY3HFWSEZmhQy451r6pcuqDKL5sVtWmbW-n6kAsrsE2UGld6v2PnXvAvvRDx6XCmuW_AQMYGtsMJskC4QRlZuQQkHSRU56AvN2NlUtXRiLdUfrtdhkFJ4" alt="Foto de Sofía Navarro" data-user-avatar class="w-7 h-7 rounded-full object-cover">
+          <span data-user-name class="font-label text-label-md text-light-on-surface dark:text-dark-on-surface">Sofía Navarro</span>
+        </a>
+        <button id="theme-toggle" data-component-id="button-icon" data-component-type="button" data-component-variant="icon" type="button" aria-label="Cambiar entre tema claro y oscuro" aria-pressed="false" class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-light-surface-container dark:bg-dark-surface-container-high text-light-on-surface dark:text-dark-on-surface border border-light-outline-variant dark:border-dark-outline-variant transition-transform duration-state-change hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-primary dark:focus-visible:ring-dark-primary">
+          <span id="theme-icon" class="material-symbols-outlined text-[20px]" aria-hidden="true">dark_mode</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="flex-1 flex flex-col gap-gutter-lg px-page-margin md:px-gutter-xl py-gutter-lg max-w-6xl w-full mx-auto">
+      <!-- Encabezado y selector de periodo -->
+      <section aria-labelledby="fitness-heading" class="flex flex-col gap-gutter-md anim-fade-up">
+        <div class="flex flex-wrap items-end justify-between gap-gutter-sm">
+          <div>
+            <h1 id="fitness-heading" class="font-headline text-display-lg-mobile md:text-display-lg text-light-on-surface dark:text-dark-on-surface text-balance">
+              Tu estado físico
+            </h1>
+            <p class="font-body text-body-md text-light-on-surface-variant dark:text-dark-on-surface-variant">
+              Telemetría en vivo de tus sesiones y perfil.
+            </p>
+          </div>
+          <div role="group" aria-label="Periodo de análisis" class="inline-flex p-gutter-xs rounded-full bg-light-surface-container dark:bg-dark-surface-container border border-light-outline-variant dark:border-dark-outline-variant">
+            <button type="button" data-period="7d" aria-pressed="true" class="period-btn px-3.5 py-1.5 rounded-full bg-light-primary dark:bg-dark-primary text-light-on-primary dark:text-dark-on-primary font-label text-label-md transition-colors duration-state-change focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-primary dark:focus-visible:ring-dark-primary">7 días</button>
+            <button type="button" data-period="28d" aria-pressed="false" class="period-btn px-3.5 py-1.5 rounded-full text-light-on-surface-variant dark:text-dark-on-surface-variant font-label text-label-md transition-colors duration-state-change focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-primary dark:focus-visible:ring-dark-primary">4 sem</button>
+            <button type="button" data-period="90d" aria-pressed="false" class="period-btn px-3.5 py-1.5 rounded-full text-light-on-surface-variant dark:text-dark-on-surface-variant font-label text-label-md transition-colors duration-state-change focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-primary dark:focus-visible:ring-dark-primary">12 sem</button>
+          </div>
+        </div>
+
+        <!-- Hero Card Vibrante con Anillo Animado -->
+        <article data-component-id="card-elevated" data-component-type="card" data-component-variant="elevated" class="flex flex-col gap-gutter-md p-gutter-lg rounded-xl bg-light-primary dark:bg-dark-surface-container-high text-light-on-primary dark:text-dark-on-surface border border-light-primary dark:border-dark-outline-variant">
+          <div class="flex items-center justify-between gap-gutter-md">
+            <div class="flex flex-col gap-gutter-xs flex-1">
+              <div class="inline-flex items-center gap-1.5 w-fit px-2.5 py-1 rounded-full bg-light-primary-container dark:bg-dark-primary text-light-on-primary-container dark:text-dark-on-primary font-label text-label-md">
+                <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: &#39;FILL&#39; 1;" aria-hidden="true">verified</span>
+                <span>Forma óptima</span>
+              </div>
+              <h2 class="font-headline text-headline-md text-light-on-primary dark:text-dark-on-surface mt-1" data-design-text-token="headline-md">
+                Listo para rendir
+              </h2>
+              <p class="font-body text-body-md text-light-on-primary dark:text-dark-on-surface-variant text-pretty" data-design-text-token="body-md">
+                Carga equilibrada y buena recuperación. Buen día para series o salida larga a correr.
+              </p>
+            </div>
+
+            <!-- Anillo SVG animado -->
+            <div class="relative flex items-center justify-center w-24 h-24 shrink-0">
+              <svg viewBox="0 0 100 100" class="w-24 h-24 -rotate-90" role="img" aria-label="Índice de preparación: 78 de 100">
+                <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="10" class="opacity-20"></circle>
+                <circle cx="50" cy="50" r="40" fill="none" stroke="#10B981" stroke-width="10" stroke-linecap="round" stroke-dasharray="251.2" stroke-dashoffset="55.2" class="anim-ring" style="transform-box: fill-box; transform-origin: center;"></circle>
+              </svg>
+              <div class="absolute inset-0 flex flex-col items-center justify-center">
+                <span class="font-mono text-mono-lg tabular-nums text-light-on-primary dark:text-dark-on-surface">78</span>
+                <span class="font-label text-label-md text-light-on-primary dark:text-dark-on-surface-variant">/100</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gráfico de barras semanal SVG vibrante -->
+          <div class="flex flex-col gap-gutter-xs p-gutter-md rounded-lg bg-light-surface-container-lowest dark:bg-dark-surface-container text-light-on-surface dark:text-dark-on-surface">
+            <div class="flex items-center justify-between gap-gutter-sm">
+              <span class="inline-flex items-center gap-1.5 font-label text-label-md text-light-on-surface-variant dark:text-dark-on-surface-variant">
+                <span class="material-symbols-outlined text-[18px] text-accent-mint" aria-hidden="true">bar_chart</span>
+                Volumen activo
+              </span>
+              <span id="period-total" class="font-mono text-mono-md tabular-nums text-light-primary dark:text-dark-primary">46.2 km esta semana</span>
+            </div>
+            <svg viewBox="0 0 320 96" class="w-full h-24 overflow-visible" role="img" aria-label="Gráfico de barras de volumen semanal">
+              <line x1="0" y1="22" x2="320" y2="22" stroke="currentColor" stroke-dasharray="3 3" class="text-light-outline-variant dark:text-dark-outline-variant opacity-50"></line>
+              <line x1="0" y1="50" x2="320" y2="50" stroke="currentColor" stroke-dasharray="3 3" class="text-light-outline-variant dark:text-dark-outline-variant opacity-50"></line>
+              <g id="chart-bars">
+                <rect x="8" y="38" width="28" height="40" rx="8" class="fill-accent-mint transition-all duration-300" opacity="0.75"></rect>
+                <rect x="52" y="54" width="28" height="24" rx="8" class="fill-accent-sky transition-all duration-300" opacity="0.75"></rect>
+                <rect x="96" y="24" width="28" height="54" rx="8" class="fill-accent-mint transition-all duration-300" opacity="0.9"></rect>
+                <rect x="140" y="68" width="28" height="10" rx="8" class="fill-accent-sky transition-all duration-300" opacity="0.45"></rect>
+                <rect x="184" y="30" width="28" height="48" rx="8" class="fill-accent-mint transition-all duration-300" opacity="0.85"></rect>
+                <rect x="228" y="48" width="28" height="30" rx="8" class="fill-accent-amber transition-all duration-300" opacity="0.85"></rect>
+                <rect x="272" y="10" width="28" height="68" rx="8" class="fill-accent-coral transition-all duration-300"></rect>
+              </g>
+              <g class="fill-light-on-surface-variant dark:fill-dark-on-surface-variant font-label text-[11px]" text-anchor="middle">
+                <text x="22" y="92">L</text>
+                <text x="66" y="92">M</text>
+                <text x="110" y="92">X</text>
+                <text x="154" y="92">J</text>
+                <text x="198" y="92">V</text>
+                <text x="242" y="92">S</text>
+                <text x="286" y="92">D</text>
+              </g>
+            </svg>
+          </div>
+        </article>
+      </section>
+
+      <!-- Indicadores clave gráficos con explicación -->
+      <section aria-labelledby="metrics-heading" class="flex flex-col gap-gutter-md anim-fade-up anim-delay-1">
+        <h2 id="metrics-heading" class="font-headline text-headline-md text-light-on-surface dark:text-dark-on-surface">
+          Indicadores clave
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-md items-stretch">
+          <!-- ACWR -->
+          <article class="h-full flex flex-col gap-gutter-sm p-gutter-md rounded-lg bg-light-surface-container-lowest dark:bg-dark-surface-container-low border border-light-outline-variant dark:border-dark-outline-variant transition-transform duration-state-change hover:-translate-y-0.5">
+            <header class="flex items-center justify-between gap-gutter-sm">
+              <div class="flex items-center gap-gutter-sm">
+                <span class="inline-flex items-center justify-center w-9 h-9 rounded-md bg-light-surface-variant dark:bg-dark-surface-variant text-light-primary dark:text-dark-primary" aria-hidden="true">
+                  <span class="material-symbols-outlined text-[20px]">speed</span>
+                </span>
+                <h3 class="font-title text-title-md text-light-on-surface dark:text-dark-on-surface">Carga (ACWR)</h3>
+              </div>
+              <span class="px-2.5 py-0.5 rounded-full bg-light-surface-variant dark:bg-dark-surface-variant text-light-primary dark:text-dark-primary font-label text-label-md">Óptimo</span>
+            </header>
+            <div class="flex items-center justify-between gap-gutter-sm">
+              <p class="font-mono text-mono-lg tabular-nums text-light-on-surface dark:text-dark-on-surface" id="metric-acwr">1.12</p>
+              <svg viewBox="0 0 80 24" class="w-20 h-6" aria-hidden="true">
+                <polyline fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" points="2,18 18,15 34,16 50,10 64,12 78,6"></polyline>
+              </svg>
+            </div>
+            <p class="font-body text-body-md text-light-on-surface-variant dark:text-dark-on-surface-variant text-pretty">
+              Compara tus últimos 7 días frente a 4 semanas. Entre 0.8 y 1.3 mejoras sin sobrecarga.
+            </p>
+          </article>
+
+          <!-- Ritmo umbral -->
+          <article class="h-full flex flex-col gap-gutter-sm p-gutter-md rounded-lg bg-light-surface-container-lowest dark:bg-dark-surface-container-low border border-light-outline-variant dark:border-dark-outline-variant transition-transform duration-state-change hover:-translate-y-0.5">
+            <header class="flex items-center justify-between gap-gutter-sm">
+              <div class="flex items-center gap-gutter-sm">
+                <span class="inline-flex items-center justify-center w-9 h-9 rounded-md bg-light-surface-variant dark:bg-dark-surface-variant text-light-tertiary dark:text-dark-tertiary" aria-hidden="true">
+                  <span class="material-symbols-outlined text-[20px]">pace</span>
+                </span>
+                <h3 class="font-title text-title-md text-light-on-surface dark:text-dark-on-surface">Ritmo umbral</h3>
+              </div>
+              <span class="px-2.5 py-0.5 rounded-full bg-light-surface-container dark:bg-dark-surface-container text-light-tertiary dark:text-dark-tertiary font-label text-label-md">-4 seg/km</span>
+            </header>
+            <div class="flex items-center justify-between gap-gutter-sm">
+              <p class="font-mono text-mono-lg tabular-nums text-light-on-surface dark:text-dark-on-surface" id="metric-pace">4:32 /km</p>
+              <svg viewBox="0 0 80 24" class="w-20 h-6" aria-hidden="true">
+                <polyline fill="none" stroke="#0EA5E9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" points="2,6 18,9 34,11 50,14 64,15 78,19"></polyline>
+              </svg>
+            </div>
+            <p class="font-body text-body-md text-light-on-surface-variant dark:text-dark-on-surface-variant text-pretty">
+              Ritmo sostenible ~60 min. Baja cuando mejora tu eficiencia cardiovascular.
+            </p>
+          </article>
+
+          <!-- Frecuencia cardíaca -->
+          <article class="h-full flex flex-col gap-gutter-sm p-gutter-md rounded-lg bg-light-surface-container-lowest dark:bg-dark-surface-container-low border border-light-outline-variant dark:border-dark-outline-variant transition-transform duration-state-change hover:-translate-y-0.5">
+            <header class="flex items-center justify-between gap-gutter-sm">
+              <div class="flex items-center gap-gutter-sm">
+                <span class="inline-flex items-center justify-center w-9 h-9 rounded-md bg-light-surface-variant dark:bg-dark-surface-variant text-light-secondary dark:text-dark-secondary" aria-hidden="true">
+                  <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: &#39;FILL&#39; 1;">cardiology</span>
+                </span>
+                <h3 class="font-title text-title-md text-light-on-surface dark:text-dark-on-surface">Pulso medio</h3>
+              </div>
+              <span class="px-2.5 py-0.5 rounded-full bg-light-surface-container dark:bg-dark-surface-container text-light-secondary dark:text-dark-secondary font-label text-label-md">Zona 2–3</span>
+            </header>
+            <div class="flex items-center justify-between gap-gutter-sm">
+              <p class="font-mono text-mono-lg tabular-nums text-light-on-surface dark:text-dark-on-surface" id="metric-hr">146 lpm</p>
+              <div class="flex items-center gap-1 w-20 h-2.5 rounded-full overflow-hidden bg-light-surface-container dark:bg-dark-surface-container" aria-hidden="true">
+                <span class="h-full w-1/4 bg-accent-sky"></span>
+                <span class="h-full w-2/4 bg-accent-mint"></span>
+                <span class="h-full w-1/4 bg-accent-coral"></span>
+              </div>
+            </div>
+            <p class="font-body text-body-md text-light-on-surface-variant dark:text-dark-on-surface-variant text-pretty">
+              Calculado con tu perfil. Priorizar Zona 2 fortalece tu base aeróbica.
+            </p>
+          </article>
+
+          <!-- Constancia semanal -->
+          <article class="h-full flex flex-col gap-gutter-sm p-gutter-md rounded-lg bg-light-surface-container-lowest dark:bg-dark-surface-container-low border border-light-outline-variant dark:border-dark-outline-variant transition-transform duration-state-change hover:-translate-y-0.5">
+            <header class="flex items-center justify-between gap-gutter-sm">
+              <div class="flex items-center gap-gutter-sm">
+                <span class="inline-flex items-center justify-center w-9 h-9 rounded-md bg-light-surface-variant dark:bg-dark-surface-variant text-light-primary dark:text-dark-primary" aria-hidden="true">
+                  <span class="material-symbols-outlined text-[20px]">calendar_month</span>
+                </span>
+                <h3 class="font-title text-title-md text-light-on-surface dark:text-dark-on-surface">Constancia</h3>
+              </div>
+              <span class="px-2.5 py-0.5 rounded-full bg-light-surface-variant dark:bg-dark-surface-variant text-light-primary dark:text-dark-primary font-label text-label-md">4 / 5 días</span>
+            </header>
+            <div class="flex items-center justify-between gap-gutter-sm">
+              <p class="font-mono text-mono-lg tabular-nums text-light-on-surface dark:text-dark-on-surface" id="metric-freq">5h 18m</p>
+              <div class="flex items-center gap-1" aria-hidden="true">
+                <span class="w-2.5 h-2.5 rounded-full bg-accent-mint"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-accent-mint"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-accent-mint"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-accent-mint"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-light-outline-variant dark:bg-dark-outline-variant"></span>
+              </div>
+            </div>
+            <p class="font-body text-body-md text-light-on-surface-variant dark:text-dark-on-surface-variant text-pretty">
+              La regularidad semanal predice mejor tu progreso que un día aislado.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Entrenamientos recientes -->
+      <section aria-labelledby="recent-heading" class="flex flex-col gap-gutter-md anim-fade-up anim-delay-2">
+        <div class="flex items-center justify-between gap-gutter-sm">
+          <h2 id="recent-heading" class="font-headline text-headline-md text-light-on-surface dark:text-dark-on-surface">
+            Sesiones recientes
+          </h2>
+          <a href="../importar-entrenamientos/ImportarEntrenamientos.html" class="inline-flex items-center gap-1 font-label text-label-lg text-light-primary dark:text-dark-primary hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-primary dark:focus-visible:ring-dark-primary rounded-sm">
+            <span>Importar</span>
+            <span class="material-symbols-outlined text-[18px]" aria-hidden="true">arrow_forward</span>
+          </a>
+        </div>
+        <div class="flex flex-col gap-gutter-sm">
+          <a href="../detalle-sesion/DetalleSesion.html" class="flex items-center justify-between gap-gutter-md p-gutter-md rounded-lg bg-light-surface-container-lowest dark:bg-dark-surface-container-low border border-light-outline-variant dark:border-dark-outline-variant transition-transform duration-state-change hover:-translate-y-0.5 hover:border-light-primary dark:hover:border-dark-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-primary dark:focus-visible:ring-dark-primary">
+            <div class="flex items-center gap-gutter-md min-w-0">
+              <span class="inline-flex items-center justify-center w-11 h-11 rounded-md bg-light-primary-container dark:bg-dark-primary-container text-light-on-primary-container dark:text-dark-on-primary-container shrink-0" aria-hidden="true">
+                <span class="material-symbols-outlined text-[22px]">directions_run</span>
+              </span>
+              <div class="min-w-0">
+                <h3 class="font-title text-title-md text-light-on-surface dark:text-dark-on-surface">Correr — Virrey</h3>
+                <p class="font-body text-body-md text-light-on-surface-variant dark:text-dark-on-surface-variant">Ayer · Strava · 148 lpm</p>
+              </div>
+            </div>
+            <span class="font-mono text-mono-md tabular-nums px-2.5 py-1 rounded-full bg-light-surface-variant dark:bg-dark-surface-variant text-light-primary dark:text-dark-primary shrink-0">16.2 km</span>
+          </a>
+
+          <a href="../detalle-sesion/DetalleSesion.html" class="flex items-center justify-between gap-gutter-md p-gutter-md rounded-lg bg-light-surface-container-lowest dark:bg-dark-surface-container-low border border-light-outline-variant dark:border-dark-outline-variant transition-transform duration-state-change hover:-translate-y-0.5 hover:border-light-primary dark:hover:border-dark-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-primary dark:focus-visible:ring-dark-primary">
+            <div class="flex items-center gap-gutter-md min-w-0">
+              <span class="inline-flex items-center justify-center w-11 h-11 rounded-md bg-light-secondary-container dark:bg-dark-secondary-container text-light-on-secondary-container dark:text-dark-on-secondary-container shrink-0" aria-hidden="true">
+                <span class="material-symbols-outlined text-[22px]">directions_bike</span>
+              </span>
+              <div class="min-w-0">
+                <h3 class="font-title text-title-md text-light-on-surface dark:text-dark-on-surface">Bici estática Z2</h3>
+                <p class="font-body text-body-md text-light-on-surface-variant dark:text-dark-on-surface-variant">Hace 3 días · .FIT · 134 lpm</p>
+              </div>
+            </div>
+            <span class="font-mono text-mono-md tabular-nums px-2.5 py-1 rounded-full bg-light-surface-container dark:bg-dark-surface-container text-light-on-surface dark:text-dark-on-surface shrink-0">24.5 km</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Navegación inferior compartida -->
+    <nav aria-label="Navegación principal" class="md:hidden sticky bottom-0 z-30 grid grid-cols-4 gap-1 px-2 py-1.5 bg-light-surface-container-lowest dark:bg-dark-surface-container-low border-t border-light-outline-variant dark:border-dark-outline-variant">
+      <a href="../estado-fisico/EstadoFisico.html" aria-current="page" class="flex flex-col items-center justify-center gap-0.5 py-1.5 rounded-lg bg-light-surface-variant dark:bg-dark-surface-variant text-light-primary dark:text-dark-primary font-label text-label-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-primary dark:focus-visible:ring-dark-primary">
+        <span class="material-symbols-outlined text-[22px]" style="font-variation-settings: &#39;FILL&#39; 1;" aria-hidden="true">monitoring</span>
+        <span>Estado</span>
+      </a>
+      <a href="../importar-entrenamientos/ImportarEntrenamientos.html" class="flex flex-col items-center justify-center gap-0.5 py-1.5 rounded-lg text-light-on-surface-variant dark:text-dark-on-surface-variant hover:bg-light-surface-container dark:hover:bg-dark-surface-container font-label text-label-md transition-colors duration-state-change focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-primary dark:focus-visible:ring-dark-primary">
+        <span class="material-symbols-outlined text-[22px]" aria-hidden="true">sync_alt</span>
+        <span>Importar</span>
+      </a>
+      <a href="../metas-deportivas/MetasDeportivas.html" class="flex flex-col items-center justify-center gap-0.5 py-1.5 rounded-lg text-light-on-surface-variant dark:text-dark-on-surface-variant hover:bg-light-surface-container dark:hover:bg-dark-surface-container font-label text-label-md transition-colors duration-state-change focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-primary dark:focus-visible:ring-dark-primary">
+        <span class="material-symbols-outlined text-[22px]" aria-hidden="true">flag</span>
+        <span>Metas</span>
+      </a>
+      <a href="../perfil-salud/PerfilSalud.html" class="flex flex-col items-center justify-center gap-0.5 py-1.5 rounded-lg text-light-on-surface-variant dark:text-dark-on-surface-variant hover:bg-light-surface-container dark:hover:bg-dark-surface-container font-label text-label-md transition-colors duration-state-change focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-primary dark:focus-visible:ring-dark-primary">
+        <span class="material-symbols-outlined text-[22px]" aria-hidden="true">person</span>
+        <span>Perfil</span>
+      </a>
+    </nav>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var btn = document.getElementById('theme-toggle');
+      var icon = document.getElementById('theme-icon');
+      function applyTheme(dark) {
+        root.classList.toggle('dark', dark);
+        if (btn) btn.setAttribute('aria-pressed', String(dark));
+        if (icon) icon.textContent = dark ? 'light_mode' : 'dark_mode';
+      }
+      try {
+        if (localStorage.getItem('pulso_theme') === 'dark') applyTheme(true);
+      } catch (e) {}
+      if (btn) {
+        btn.addEventListener('click', function () {
+          var next = !root.classList.contains('dark');
+          applyTheme(next);
+          try { localStorage.setItem('pulso_theme', next ? 'dark' : 'light'); } catch (e) {}
+        });
+      }
+
+      var dataByPeriod = {
+        '7d': { total: '46.2 km esta semana', acwr: '1.12', pace: '4:32 /km', hr: '146 lpm', freq: '5h 18m', heights: [40, 24, 54, 10, 48, 30, 68] },
+        '28d': { total: '174.8 km en 4 semanas', acwr: '1.05', pace: '4:36 /km', hr: '144 lpm', freq: '19h 40m', heights: [52, 44, 60, 32, 56, 48, 64] },
+        '90d': { total: '512.0 km en 12 semanas', acwr: '0.98', pace: '4:41 /km', hr: '143 lpm', freq: '58h 12m', heights: [46, 50, 42, 58, 62, 54, 66] }
+      };
+
+      var periodButtons = document.querySelectorAll('.period-btn');
+      var bars = document.querySelectorAll('#chart-bars rect');
+      periodButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+          var p = button.getAttribute('data-period');
+          var d = dataByPeriod[p];
+          if (!d) return;
+          periodButtons.forEach(function (b) {
+            var active = b === button;
+            b.setAttribute('aria-pressed', String(active));
+            b.className = active
+              ? 'period-btn px-3.5 py-1.5 rounded-full bg-light-primary dark:bg-dark-primary text-light-on-primary dark:text-dark-on-primary font-label text-label-md transition-colors duration-state-change focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-primary dark:focus-visible:ring-dark-primary'
+              : 'period-btn px-3.5 py-1.5 rounded-full text-light-on-surface-variant dark:text-dark-on-surface-variant font-label text-label-md transition-colors duration-state-change focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-primary dark:focus-visible:ring-dark-primary';
+          });
+          document.getElementById('period-total').textContent = d.total;
+          document.getElementById('metric-acwr').textContent = d.acwr;
+          document.getElementById('metric-pace').textContent = d.pace;
+          document.getElementById('metric-hr').textContent = d.hr;
+          document.getElementById('metric-freq').textContent = d.freq;
+          bars.forEach(function (rect, idx) {
+            var h = d.heights[idx] || 30;
+            rect.setAttribute('height', String(h));
+            rect.setAttribute('y', String(78 - h));
+          });
+        });
+      });
+
+      try {
+        var savedAvatar = localStorage.getItem('pulso_user_avatar');
+        var savedName = localStorage.getItem('pulso_user_name');
+        if (savedAvatar) document.querySelectorAll('[data-user-avatar]').forEach(function (img) { img.src = savedAvatar; });
+        if (savedName) {
+          document.querySelectorAll('[data-user-name]').forEach(function (el) { el.textContent = savedName; });
+          document.querySelectorAll('[data-user-avatar]').forEach(function (img) { img.alt = 'Foto de ' + savedName; });
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+
+</body></html>

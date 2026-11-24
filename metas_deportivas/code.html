@@ -1,0 +1,587 @@
+<!DOCTYPE html><html lang="es"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metas deportivas — Entreno</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'success': '#15803D',
+        'warning': '#B45309',
+        'info': '#0369A1',
+        'accent-mint': '#10B981',
+        'accent-coral': '#FF5722',
+        'accent-sky': '#0EA5E9',
+        'accent-amber': '#F59E0B',
+        'light-primary': '#006450',
+        'light-on-primary': '#FFFFFF',
+        'light-primary-container': '#007F66',
+        'light-on-primary-container': '#D0FFED',
+        'light-secondary': '#B02E00',
+        'light-on-secondary': '#FFFFFF',
+        'light-secondary-container': '#FC5929',
+        'light-on-secondary-container': '#541100',
+        'light-tertiary': '#005C8E',
+        'light-on-tertiary': '#FFFFFF',
+        'light-tertiary-container': '#2075AE',
+        'light-on-tertiary-container': '#EEF5FF',
+        'light-error': '#BA1A1A',
+        'light-on-error': '#FFFFFF',
+        'light-error-container': '#FFDAD6',
+        'light-on-error-container': '#93000A',
+        'light-background': '#F6FAF6',
+        'light-on-background': '#181D1B',
+        'light-surface': '#F6FAF6',
+        'light-surface-dim': '#D6DBD7',
+        'light-surface-bright': '#F6FAF6',
+        'light-surface-container-lowest': '#FFFFFF',
+        'light-surface-container-low': '#F0F5F1',
+        'light-surface-container': '#EAEFEB',
+        'light-surface-container-high': '#E5E9E5',
+        'light-surface-container-highest': '#DFE4E0',
+        'light-on-surface': '#181D1B',
+        'light-surface-variant': '#D9E5DF',
+        'light-on-surface-variant': '#3E4945',
+        'light-outline': '#6E7A74',
+        'light-outline-variant': '#BDC9C3',
+        'light-inverse-surface': '#2C322F',
+        'light-inverse-on-surface': '#EDF2EE',
+        'light-inverse-primary': '#76D8BB',
+        'dark-primary': '#76D8BB',
+        'dark-on-primary': '#00382B',
+        'dark-primary-container': '#007F66',
+        'dark-on-primary-container': '#D0FFED',
+        'dark-secondary': '#FFB5A0',
+        'dark-on-secondary': '#601500',
+        'dark-secondary-container': '#CA3701',
+        'dark-on-secondary-container': '#FFECE7',
+        'dark-tertiary': '#94CCFF',
+        'dark-on-tertiary': '#003352',
+        'dark-tertiary-container': '#2075AE',
+        'dark-on-tertiary-container': '#EEF5FF',
+        'dark-error': '#FFB4AB',
+        'dark-on-error': '#690005',
+        'dark-error-container': '#93000A',
+        'dark-on-error-container': '#FFDAD6',
+        'dark-background': '#0F1412',
+        'dark-on-background': '#DFE4E0',
+        'dark-surface': '#0F1412',
+        'dark-surface-dim': '#0F1412',
+        'dark-surface-bright': '#353A38',
+        'dark-surface-container-lowest': '#0A0F0D',
+        'dark-surface-container-low': '#181D1B',
+        'dark-surface-container': '#1C211F',
+        'dark-surface-container-high': '#262B29',
+        'dark-surface-container-highest': '#313633',
+        'dark-on-surface': '#DFE4E0',
+        'dark-surface-variant': '#3E4945',
+        'dark-on-surface-variant': '#BDC9C3',
+        'dark-outline': '#87938E',
+        'dark-outline-variant': '#3E4945',
+        'dark-inverse-surface': '#DFE4E0',
+        'dark-inverse-on-surface': '#2C322F',
+        'dark-inverse-primary': '#006B56',
+      },
+      borderRadius: {
+        'sm': '8px',
+        'DEFAULT': '12px',
+        'md': '14px',
+        'lg': '20px',
+        'xl': '28px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '16px',
+        'gutter-lg': '24px',
+        'gutter-xl': '32px',
+        'section': '40px',
+        'page-margin': '16px',
+      },
+      fontFamily: {
+        'display': ['"Mona Sans"', 'sans-serif'],
+        'headline': ['"Mona Sans"', 'sans-serif'],
+        'title': ['"Commissioner"', 'sans-serif'],
+        'body': ['"Commissioner"', 'sans-serif'],
+        'label': ['"Commissioner"', 'sans-serif'],
+        'mono': ['"Reddit Mono"', 'monospace'],
+      },
+      fontSize: {
+        'display-lg': ['40px', { lineHeight: '46px', letterSpacing: '-0.5px', fontWeight: '700' }],
+        'display-lg-mobile': ['30px', { lineHeight: '36px', letterSpacing: '-0.25px', fontWeight: '700' }],
+        'headline-lg': ['28px', { lineHeight: '34px', letterSpacing: '-0.25px', fontWeight: '700' }],
+        'headline-md': ['22px', { lineHeight: '28px', letterSpacing: '0px', fontWeight: '600' }],
+        'title-lg': ['18px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '600' }],
+        'title-md': ['16px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '600' }],
+        'body-lg': ['16px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-md': ['14px', { lineHeight: '21px', letterSpacing: '0px', fontWeight: '400' }],
+        'label-lg': ['14px', { lineHeight: '20px', letterSpacing: '0.1px', fontWeight: '600' }],
+        'label-md': ['12px', { lineHeight: '16px', letterSpacing: '0.2px', fontWeight: '600' }],
+        'mono-lg': ['20px', { lineHeight: '26px', letterSpacing: '0px', fontWeight: '600' }],
+        'mono-md': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '500' }],
+      },
+      transitionDuration: {
+        'state-change': '150ms',
+        'surface-enter': '220ms',
+        'surface-exit': '150ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'surface-enter': '0ms',
+        'surface-exit': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-exit': 'cubic-bezier(0.3, 0, 1, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link href="https://fonts.googleapis.com/css2?family=Mona+Sans:wght@600;700&amp;family=Commissioner:wght@400;600&amp;family=Reddit+Mono:wght@500;600&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+  <style>
+    .material-symbols-outlined { display: inline-block; width: 1em; height: 1em; line-height: 1 !important; box-sizing: content-box; overflow: hidden; white-space: nowrap; direction: ltr; vertical-align: middle; }
+    @keyframes pulsoFadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .anim-fade-up { animation: pulsoFadeUp 320ms cubic-bezier(0.2, 0, 0, 1) both; }
+    .anim-delay-1 { animation-delay: 60ms; }
+    .anim-delay-2 { animation-delay: 120ms; }
+    @media (prefers-reduced-motion: reduce) {
+      .anim-fade-up { animation: none !important; }
+    }
+  </style>
+</head>
+<body class="bg-light-surface dark:bg-dark-surface text-light-on-surface dark:text-dark-on-surface antialiased">
+  <div class="min-h-[1024px] flex bg-light-surface dark:bg-dark-surface" data-stitch-vh="min-h-[1024px]===min-h-screen">
+
+    <!-- Barra lateral de navegación en escritorio -->
+    <aside class="hidden md:flex w-64 shrink-0 min-h-[1024px] flex-col justify-between p-gutter-md bg-light-surface-container-low dark:bg-dark-surface-container-low border-r border-light-outline-variant dark:border-dark-outline-variant" data-stitch-vh="min-h-[1024px]===min-h-screen">
+      <div class="flex flex-col gap-gutter-lg">
+        <div class="flex items-center gap-gutter-sm px-2 pt-1">
+          <span class="inline-flex items-center justify-center w-10 h-10 rounded-md bg-light-primary-container dark:bg-dark-primary-container text-light-on-primary-container dark:text-dark-on-primary-container" aria-hidden="true">
+            <span class="material-symbols-outlined text-[22px]" style="font-variation-settings: &#39;FILL&#39; 1;">bolt</span>
+          </span>
+          <span class="font-headline text-headline-md text-light-on-surface dark:text-dark-on-surface">Entreno</span>
+        </div>
+
+        <nav aria-label="Navegación principal de escritorio" class="flex flex-col gap-1">
+          <a href="../panel-escritorio/PanelEscritorio.html" class="flex items-center gap-gutter-sm px-3 py-2.5 rounded-md text-light-on-surface-variant dark:text-dark-on-surface-variant hover:bg-light-surface-container dark:hover:bg-dark-surface-container font-label text-label-lg transition-colors duration-state-change">
+            <span class="material-symbols-outlined text-[20px]" aria-hidden="true">dashboard</span>
+            <span>Panel general</span>
+          </a>
+          <a href="../estado-fisico/EstadoFisico.html" class="flex items-center gap-gutter-sm px-3 py-2.5 rounded-md text-light-on-surface-variant dark:text-dark-on-surface-variant hover:bg-light-surface-container dark:hover:bg-dark-surface-container font-label text-label-lg transition-colors duration-state-change">
+            <span class="material-symbols-outlined text-[20px]" aria-hidden="true">monitoring</span>
+            <span>Estado físico</span>
+          </a>
+          <a href="../importar-entrenamientos/ImportarEntrenamientos.html" class="flex items-center gap-gutter-sm px-3 py-2.5 rounded-md text-light-on-surface-variant dark:text-dark-on-surface-variant hover:bg-light-surface-container dark:hover:bg-dark-surface-container font-label text-label-lg transition-colors duration-state-change">
+            <span class="material-symbols-outlined text-[20px]" aria-hidden="true">sync_alt</span>
+            <span>Garmin y Strava</span>
+          </a>
+          <a href="../metas-deportivas/MetasDeportivas.html" aria-current="page" class="flex items-center gap-gutter-sm px-3 py-2.5 rounded-md bg-light-surface-variant dark:bg-dark-surface-variant text-light-primary dark:text-dark-primary font-label text-label-lg">
+            <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: &#39;FILL&#39; 1;" aria-hidden="true">flag</span>
+            <span>Metas deportivas</span>
+          </a>
+          <a href="../plan-entrenamiento/PlanEntrenamiento.html" class="flex items-center gap-gutter-sm px-3 py-2.5 rounded-md text-light-on-surface-variant dark:text-dark-on-surface-variant hover:bg-light-surface-container dark:hover:bg-dark-surface-container font-label text-label-lg transition-colors duration-state-change">
+            <span class="material-symbols-outlined text-[20px]" aria-hidden="true">calendar_month</span>
+            <span>Plan y pausas</span>
+          </a>
+          <a href="../perfil-salud/PerfilSalud.html" class="flex items-center gap-gutter-sm px-3 py-2.5 rounded-md text-light-on-surface-variant dark:text-dark-on-surface-variant hover:bg-light-surface-container dark:hover:bg-dark-surface-container font-label text-label-lg transition-colors duration-state-change">
+            <span class="material-symbols-outlined text-[20px]" aria-hidden="true">person</span>
+            <span>Perfil y salud</span>
+          </a>
+        </nav>
+      </div>
+
+      <a href="../perfil-salud/PerfilSalud.html" class="flex items-center gap-gutter-sm p-2.5 rounded-lg bg-light-surface-container-lowest dark:bg-dark-surface-container border border-light-outline-variant dark:border-dark-outline-variant hover:border-light-primary dark:hover:border-dark-primary transition-colors duration-state-change">
+        <img src="https://lh3.googleusercontent.com/aida/ALJJyrANlqWBEKvZ88Mht2MesmNNAzKjG8h7OywPwSl1ISiGTvGovI-zzQMSBgSeSef6AgO7iz6KK4Gkko0A_G9bSrWa7SmccU3yCQxmLmKu438P_bv02OYH0uZt_9FmDABgY3HFWSEZmhQy451r6pcuqDKL5sVtWmbW-n6kAsrsE2UGld6v2PnXvAvvRDx6XCmuW_AQMYGtsMJskC4QRlZuQQkHSRU56AvN2NlUtXRiLdUfrtdhkFJ4" alt="Foto de Sofía Navarro" data-user-avatar class="w-10 h-10 rounded-full object-cover shrink-0">
+        <div class="min-w-0">
+          <span data-user-name class="font-title text-title-md text-light-on-surface dark:text-dark-on-surface block">Sofía Navarro</span>
+          <span class="font-body text-body-md text-light-on-surface-variant dark:text-dark-on-surface-variant block">Z2: 132–145 lpm</span>
+        </div>
+      </a>
+    </aside>
+
+    <div class="flex-1 flex flex-col min-w-0">
+
+    <!-- Header compartido -->
+    <header class="sticky top-0 z-30 flex items-center justify-between gap-gutter-md px-page-margin py-3 bg-light-surface dark:bg-dark-surface border-b border-light-outline-variant dark:border-dark-outline-variant">
+      <div class="flex items-center gap-gutter-sm">
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-md bg-light-primary-container dark:bg-dark-primary-container text-light-on-primary-container dark:text-dark-on-primary-container" aria-hidden="true">
+          <span class="material-symbols-outlined text-[22px]" style="font-variation-settings: &#39;FILL&#39; 1;">bolt</span>
+        </span>
+        <span class="font-headline text-title-lg text-light-on-surface dark:text-dark-on-surface">Entreno</span>
+      </div>
+      <div class="flex items-center gap-gutter-sm">
+        <a href="../perfil-salud/PerfilSalud.html" class="inline-flex items-center gap-2 pl-1 pr-3 py-1 rounded-full bg-light-surface-container dark:bg-dark-surface-container border border-light-outline-variant dark:border-dark-outline-variant hover:border-light-primary dark:hover:border-dark-primary transition-colors duration-state-change focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-primary dark:focus-visible:ring-dark-primary">
+          <img src="https://lh3.googleusercontent.com/aida/ALJJyrANlqWBEKvZ88Mht2MesmNNAzKjG8h7OywPwSl1ISiGTvGovI-zzQMSBgSeSef6AgO7iz6KK4Gkko0A_G9bSrWa7SmccU3yCQxmLmKu438P_bv02OYH0uZt_9FmDABgY3HFWSEZmhQy451r6pcuqDKL5sVtWmbW-n6kAsrsE2UGld6v2PnXvAvvRDx6XCmuW_AQMYGtsMJskC4QRlZuQQkHSRU56AvN2NlUtXRiLdUfrtdhkFJ4" alt="Foto de Sofía Navarro" data-user-avatar class="w-7 h-7 rounded-full object-cover">
+          <span data-user-name class="font-label text-label-md text-light-on-surface dark:text-dark-on-surface">Sofía Navarro</span>
+        </a>
+        <button id="theme-toggle" data-component-id="button-icon" data-component-type="button" data-component-variant="icon" type="button" aria-label="Cambiar entre tema claro y oscuro" aria-pressed="false" class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-light-surface-container dark:bg-dark-surface-container-high text-light-on-surface dark:text-dark-on-surface border border-light-outline-variant dark:border-dark-outline-variant transition-transform duration-state-change hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-primary dark:focus-visible:ring-dark-primary">
+          <span id="theme-icon" class="material-symbols-outlined text-[20px]" aria-hidden="true">dark_mode</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="flex-1 flex flex-col gap-gutter-lg px-page-margin md:px-gutter-xl py-gutter-lg max-w-6xl w-full mx-auto">
+      <section class="flex flex-col gap-gutter-xs anim-fade-up">
+        <h1 class="font-headline text-display-lg-mobile md:text-display-lg text-light-on-surface dark:text-dark-on-surface text-balance">
+          Metas deportivas
+        </h1>
+        <p class="font-body text-body-md text-light-on-surface-variant dark:text-dark-on-surface-variant">
+          Configura un reto de un día o una carrera por etapas con tu objetivo de tiempo o participación.
+        </p>
+      </section>
+
+      <!-- Tarjeta gráfica de próxima meta enlazada a detalle -->
+      <section aria-label="Próximo objetivo" class="flex flex-col gap-gutter-sm anim-fade-up anim-delay-1">
+        <a href="../detalle-meta/DetalleMeta.html" class="flex flex-col gap-gutter-md p-gutter-lg rounded-xl bg-light-primary dark:bg-dark-surface-container-high text-light-on-primary dark:text-dark-on-surface border border-light-primary dark:border-dark-outline-variant transition-transform duration-state-change hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-primary dark:focus-visible:ring-dark-primary">
+          <div class="flex items-start justify-between gap-gutter-sm">
+            <div class="flex items-center gap-gutter-sm">
+              <span class="inline-flex items-center justify-center w-11 h-11 rounded-md bg-light-primary-container dark:bg-dark-primary text-light-on-primary-container dark:text-dark-on-primary shrink-0" aria-hidden="true">
+                <span class="material-symbols-outlined text-[24px]" style="font-variation-settings: &#39;FILL&#39; 1;">emoji_events</span>
+              </span>
+              <div>
+                <h2 id="preview-goal-title" class="font-headline text-title-lg text-light-on-primary dark:text-dark-on-surface">Media Maratón de Bogotá</h2>
+                <p id="preview-goal-meta" class="font-mono text-mono-md tabular-nums text-light-on-primary dark:text-dark-on-surface-variant">
+                  18 Abr 2027 · 21.1 km · 195 m+
+                </p>
+              </div>
+            </div>
+            <span id="preview-goal-badge" class="px-3 py-1 rounded-full bg-light-secondary-container dark:bg-dark-secondary-container text-light-on-secondary-container dark:text-dark-on-secondary-container font-label text-label-md shrink-0">
+              1h 38m
+            </span>
+          </div>
+
+          <svg viewBox="0 0 600 64" class="w-full h-16" role="img" aria-label="Perfil gráfico de altimetría">
+            <polygon points="0,60 0,48 110,36 220,18 330,32 450,14 600,26 600,60" class="fill-accent-mint opacity-25"></polygon>
+            <polyline fill="none" stroke-width="3" stroke-linecap="round" points="0,48 110,36 220,18 330,32 450,14 600,26" class="stroke-accent-mint"></polyline>
+          </svg>
+
+          <div class="flex flex-col gap-1.5">
+            <div class="flex items-center justify-between font-label text-label-md">
+              <span>Progreso de preparación · Ver detalle</span>
+              <span class="font-mono text-mono-md tabular-nums">68%</span>
+            </div>
+            <div class="w-full h-2.5 rounded-full bg-light-primary-container dark:bg-dark-surface-container overflow-hidden">
+              <div class="h-full w-2/3 rounded-full bg-accent-mint transition-all duration-300"></div>
+            </div>
+          </div>
+        </a>
+      </section>
+
+      <!-- Formulario de nueva meta -->
+      <section aria-labelledby="create-goal-heading" class="flex flex-col gap-gutter-md p-gutter-lg rounded-lg bg-light-surface-container-lowest dark:bg-dark-surface-container-low border border-light-outline-variant dark:border-dark-outline-variant anim-fade-up anim-delay-2">
+        <div class="flex items-center gap-gutter-sm">
+          <span class="material-symbols-outlined text-[22px] text-light-primary dark:text-dark-primary" aria-hidden="true">add_circle</span>
+          <h2 id="create-goal-heading" class="font-headline text-headline-md text-light-on-surface dark:text-dark-on-surface">
+            Crear nueva meta
+          </h2>
+        </div>
+
+        <!-- Tabs con iconos -->
+        <div data-component-id="tabs-horizontal" data-component-type="tabs" data-component-variant="horizontal" class="flex flex-col gap-gutter-md">
+          <div role="tablist" aria-label="Tipo de meta deportiva" class="grid grid-cols-2 gap-gutter-xs p-gutter-xs rounded-full bg-light-surface-container dark:bg-dark-surface-container border border-light-outline-variant dark:border-dark-outline-variant">
+            <button role="tab" id="tab-single" type="button" aria-selected="true" aria-controls="panel-single" tabindex="0" class="goal-tab inline-flex items-center justify-center gap-1.5 px-gutter-md py-2 rounded-full bg-light-primary dark:bg-dark-primary text-light-on-primary dark:text-dark-on-primary font-label text-label-lg transition-colors duration-state-change focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-primary dark:focus-visible:ring-dark-primary">
+              <span class="material-symbols-outlined text-[18px]" aria-hidden="true">directions_run</span>
+              <span data-design-text-token="label-lg">Salida única</span>
+            </button>
+            <button role="tab" id="tab-stages" type="button" aria-selected="false" aria-controls="panel-stages" tabindex="-1" class="goal-tab inline-flex items-center justify-center gap-1.5 px-gutter-md py-2 rounded-full text-light-on-surface-variant dark:text-dark-on-surface-variant font-label text-label-lg transition-colors duration-state-change focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-primary dark:focus-visible:ring-dark-primary">
+              <span class="material-symbols-outlined text-[18px]" aria-hidden="true">route</span>
+              <span data-design-text-token="label-lg">Por etapas</span>
+            </button>
+          </div>
+
+          <form id="goal-form" class="flex flex-col gap-gutter-md">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-md">
+              <label class="flex flex-col gap-gutter-xs">
+                <span class="font-label text-label-lg text-light-on-surface dark:text-dark-on-surface">Nombre del evento o meta</span>
+                <input id="goal-name" type="text" required placeholder="Ej. Quebrantahuesos / Ultra Pirineu" class="w-full px-gutter-md py-2.5 rounded-md bg-light-surface-container-lowest dark:bg-dark-surface-container border border-light-outline-variant dark:border-dark-outline-variant font-body text-body-lg text-light-on-surface dark:text-dark-on-surface focus:outline-none focus:ring-2 focus:ring-light-primary dark:focus:ring-dark-primary">
+              </label>
+
+              <label class="flex flex-col gap-gutter-xs">
+                <span class="font-label text-label-lg text-light-on-surface dark:text-dark-on-surface">Fecha de inicio</span>
+                <input id="goal-date" type="date" required value="2027-05-16" class="w-full px-gutter-md py-2.5 rounded-md bg-light-surface-container-lowest dark:bg-dark-surface-container border border-light-outline-variant dark:border-dark-outline-variant font-mono text-mono-md text-light-on-surface dark:text-dark-on-surface focus:outline-none focus:ring-2 focus:ring-light-primary dark:focus:ring-dark-primary">
+              </label>
+            </div>
+
+            <!-- Panel Salida única -->
+            <div role="tabpanel" id="panel-single" aria-labelledby="tab-single" class="flex flex-col gap-gutter-md">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-gutter-md">
+                <label class="flex flex-col gap-gutter-xs">
+                  <span class="font-label text-label-lg text-light-on-surface dark:text-dark-on-surface">Distancia (km)</span>
+                  <input id="single-distance" type="number" step="0.1" value="42.2" class="w-full px-gutter-md py-2.5 rounded-md bg-light-surface-container-lowest dark:bg-dark-surface-container border border-light-outline-variant dark:border-dark-outline-variant font-mono text-mono-md tabular-nums text-light-on-surface dark:text-dark-on-surface focus:outline-none focus:ring-2 focus:ring-light-primary dark:focus:ring-dark-primary">
+                </label>
+
+                <label class="flex flex-col gap-gutter-xs">
+                  <span class="font-label text-label-lg text-light-on-surface dark:text-dark-on-surface">Desnivel positivo (m+)</span>
+                  <input id="single-elevation" type="number" value="650" class="w-full px-gutter-md py-2.5 rounded-md bg-light-surface-container-lowest dark:bg-dark-surface-container border border-light-outline-variant dark:border-dark-outline-variant font-mono text-mono-md tabular-nums text-light-on-surface dark:text-dark-on-surface focus:outline-none focus:ring-2 focus:ring-light-primary dark:focus:ring-dark-primary">
+                </label>
+              </div>
+
+              <!-- Enfoque salida única -->
+              <fieldset class="flex flex-col gap-gutter-sm pt-gutter-sm border-t border-light-outline-variant dark:border-dark-outline-variant">
+                <legend class="font-label text-label-lg text-light-on-surface dark:text-dark-on-surface mb-1">Enfoque de la salida</legend>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-gutter-sm">
+                  <label class="flex items-center gap-gutter-sm p-gutter-md rounded-md border border-light-outline-variant dark:border-dark-outline-variant bg-light-surface-container-low dark:bg-dark-surface-container cursor-pointer">
+                    <input type="radio" name="goal-focus" value="time" checked class="text-light-primary dark:text-dark-primary focus:ring-light-primary dark:focus:ring-dark-primary">
+                    <span class="material-symbols-outlined text-[20px] text-light-secondary dark:text-dark-secondary" aria-hidden="true">timer</span>
+                    <span class="font-body text-body-md text-light-on-surface dark:text-dark-on-surface">Objetivo de tiempo</span>
+                  </label>
+                  <label class="flex items-center gap-gutter-sm p-gutter-md rounded-md border border-light-outline-variant dark:border-dark-outline-variant bg-light-surface-container-low dark:bg-dark-surface-container cursor-pointer">
+                    <input type="radio" name="goal-focus" value="finish" class="text-light-primary dark:text-dark-primary focus:ring-light-primary dark:focus:ring-dark-primary">
+                    <span class="material-symbols-outlined text-[20px] text-light-primary dark:text-dark-primary" aria-hidden="true">flag</span>
+                    <span class="font-body text-body-md text-light-on-surface dark:text-dark-on-surface">Solo terminar</span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <div id="target-time-wrapper" class="grid grid-cols-1 sm:grid-cols-2 gap-gutter-md">
+                <label class="flex flex-col gap-gutter-xs">
+                  <span class="font-label text-label-lg text-light-on-surface dark:text-dark-on-surface">Tiempo objetivo (hh:mm)</span>
+                  <input id="target-time" type="text" value="03:45" placeholder="03:45" class="w-full px-gutter-md py-2.5 rounded-md bg-light-surface-container-lowest dark:bg-dark-surface-container border border-light-outline-variant dark:border-dark-outline-variant font-mono text-mono-md tabular-nums text-light-on-surface dark:text-dark-on-surface focus:outline-none focus:ring-2 focus:ring-light-primary dark:focus:ring-dark-primary">
+                </label>
+              </div>
+            </div>
+
+            <!-- Panel Carrera por etapas -->
+            <div role="tabpanel" id="panel-stages" aria-labelledby="tab-stages" hidden class="flex flex-col gap-gutter-md">
+              <div class="flex flex-wrap items-end justify-between gap-gutter-sm">
+                <label class="flex flex-col gap-gutter-xs max-w-xs">
+                  <span class="font-label text-label-lg text-light-on-surface dark:text-dark-on-surface">Número de días / etapas</span>
+                  <input id="stage-count" type="number" min="2" max="10" value="3" class="w-full px-gutter-md py-2.5 rounded-md bg-light-surface-container-lowest dark:bg-dark-surface-container border border-light-outline-variant dark:border-dark-outline-variant font-mono text-mono-md tabular-nums text-light-on-surface dark:text-dark-on-surface focus:outline-none focus:ring-2 focus:ring-light-primary dark:focus:ring-dark-primary">
+                </label>
+                <p class="font-body text-body-md text-light-on-surface-variant dark:text-dark-on-surface-variant">
+                  Define si en cada etapa buscas un tiempo o solo terminar.
+                </p>
+              </div>
+              <div id="stages-container" class="flex flex-col gap-gutter-sm"></div>
+            </div>
+
+            <!-- Días disponibles para entrenar -->
+            <fieldset class="flex flex-col gap-gutter-xs pt-gutter-xs border-t border-light-outline-variant dark:border-dark-outline-variant">
+              <legend class="font-label text-label-lg text-light-on-surface dark:text-dark-on-surface">¿Qué días puedes entrenar?</legend>
+              <div id="training-days-picker" class="grid grid-cols-7 gap-1.5 pt-1">
+                <button type="button" data-day="0" aria-pressed="false" class="day-toggle py-2 rounded-md bg-light-surface-container dark:bg-dark-surface-container text-light-on-surface-variant dark:text-dark-on-surface-variant font-label text-label-md border border-light-outline-variant dark:border-dark-outline-variant">L</button>
+                <button type="button" data-day="1" aria-pressed="true" class="day-toggle py-2 rounded-md bg-light-primary dark:bg-dark-primary text-light-on-primary dark:text-dark-on-primary font-label text-label-md border border-light-primary dark:border-dark-primary">M</button>
+                <button type="button" data-day="2" aria-pressed="false" class="day-toggle py-2 rounded-md bg-light-surface-container dark:bg-dark-surface-container text-light-on-surface-variant dark:text-dark-on-surface-variant font-label text-label-md border border-light-outline-variant dark:border-dark-outline-variant">X</button>
+                <button type="button" data-day="3" aria-pressed="true" class="day-toggle py-2 rounded-md bg-light-primary dark:bg-dark-primary text-light-on-primary dark:text-dark-on-primary font-label text-label-md border border-light-primary dark:border-dark-primary">J</button>
+                <button type="button" data-day="4" aria-pressed="false" class="day-toggle py-2 rounded-md bg-light-surface-container dark:bg-dark-surface-container text-light-on-surface-variant dark:text-dark-on-surface-variant font-label text-label-md border border-light-outline-variant dark:border-dark-outline-variant">V</button>
+                <button type="button" data-day="5" aria-pressed="true" class="day-toggle py-2 rounded-md bg-light-primary dark:bg-dark-primary text-light-on-primary dark:text-dark-on-primary font-label text-label-md border border-light-primary dark:border-dark-primary">S</button>
+                <button type="button" data-day="6" aria-pressed="true" class="day-toggle py-2 rounded-md bg-light-primary dark:bg-dark-primary text-light-on-primary dark:text-dark-on-primary font-label text-label-md border border-light-primary dark:border-dark-primary">D</button>
+              </div>
+            </fieldset>
+
+            <div class="flex flex-wrap items-center gap-gutter-sm pt-gutter-xs">
+              <button data-component-id="button-primary" data-component-type="button" data-component-variant="primary" type="submit" class="inline-flex items-center justify-center gap-gutter-sm px-gutter-lg py-3 rounded-md bg-light-primary dark:bg-dark-primary text-light-on-primary dark:text-dark-on-primary font-label text-label-lg transition-transform duration-state-change hover:opacity-90 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-primary dark:focus-visible:ring-dark-primary">
+                <span class="material-symbols-outlined text-[18px]" aria-hidden="true">check_circle</span>
+                <span data-design-text-token="label-lg">Guardar meta y generar plan</span>
+              </button>
+              <a href="../plan-entrenamiento/PlanEntrenamiento.html" class="inline-flex items-center gap-1 font-label text-label-lg text-light-primary dark:text-dark-primary hover:underline">
+                <span>Ver plan y calendario</span>
+                <span class="material-symbols-outlined text-[18px]" aria-hidden="true">arrow_forward</span>
+              </a>
+              <span id="goal-saved-msg" class="hidden font-body text-body-md text-success" role="status" aria-live="polite">Meta guardada y plan actualizado.</span>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Navegación inferior compartida -->
+    <nav aria-label="Navegación principal" class="md:hidden sticky bottom-0 z-30 grid grid-cols-4 gap-1 px-2 py-1.5 bg-light-surface-container-lowest dark:bg-dark-surface-container-low border-t border-light-outline-variant dark:border-dark-outline-variant">
+      <a href="../estado-fisico/EstadoFisico.html" class="flex flex-col items-center justify-center gap-0.5 py-1.5 rounded-lg text-light-on-surface-variant dark:text-dark-on-surface-variant hover:bg-light-surface-container dark:hover:bg-dark-surface-container font-label text-label-md transition-colors duration-state-change focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-primary dark:focus-visible:ring-dark-primary">
+        <span class="material-symbols-outlined text-[22px]" aria-hidden="true">monitoring</span>
+        <span>Estado</span>
+      </a>
+      <a href="../importar-entrenamientos/ImportarEntrenamientos.html" class="flex flex-col items-center justify-center gap-0.5 py-1.5 rounded-lg text-light-on-surface-variant dark:text-dark-on-surface-variant hover:bg-light-surface-container dark:hover:bg-dark-surface-container font-label text-label-md transition-colors duration-state-change focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-primary dark:focus-visible:ring-dark-primary">
+        <span class="material-symbols-outlined text-[22px]" aria-hidden="true">sync_alt</span>
+        <span>Importar</span>
+      </a>
+      <a href="../metas-deportivas/MetasDeportivas.html" aria-current="page" class="flex flex-col items-center justify-center gap-0.5 py-1.5 rounded-lg bg-light-surface-variant dark:bg-dark-surface-variant text-light-primary dark:text-dark-primary font-label text-label-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-primary dark:focus-visible:ring-dark-primary">
+        <span class="material-symbols-outlined text-[22px]" style="font-variation-settings: &#39;FILL&#39; 1;" aria-hidden="true">flag</span>
+        <span>Metas</span>
+      </a>
+      <a href="../perfil-salud/PerfilSalud.html" class="flex flex-col items-center justify-center gap-0.5 py-1.5 rounded-lg text-light-on-surface-variant dark:text-dark-on-surface-variant hover:bg-light-surface-container dark:hover:bg-dark-surface-container font-label text-label-md transition-colors duration-state-change focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-primary dark:focus-visible:ring-dark-primary">
+        <span class="material-symbols-outlined text-[22px]" aria-hidden="true">person</span>
+        <span>Perfil</span>
+      </a>
+    </nav>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var btn = document.getElementById('theme-toggle');
+      var icon = document.getElementById('theme-icon');
+      function applyTheme(dark) {
+        root.classList.toggle('dark', dark);
+        if (btn) btn.setAttribute('aria-pressed', String(dark));
+        if (icon) icon.textContent = dark ? 'light_mode' : 'dark_mode';
+      }
+      try {
+        if (localStorage.getItem('pulso_theme') === 'dark') applyTheme(true);
+      } catch (e) {}
+      if (btn) {
+        btn.addEventListener('click', function () {
+          var next = !root.classList.contains('dark');
+          applyTheme(next);
+          try { localStorage.setItem('pulso_theme', next ? 'dark' : 'light'); } catch (e) {}
+        });
+      }
+
+      var mode = 'single';
+      var tabSingle = document.getElementById('tab-single');
+      var tabStages = document.getElementById('tab-stages');
+      var panelSingle = document.getElementById('panel-single');
+      var panelStages = document.getElementById('panel-stages');
+
+      function setMode(nextMode) {
+        mode = nextMode;
+        var isSingle = mode === 'single';
+        tabSingle.setAttribute('aria-selected', String(isSingle));
+        tabSingle.setAttribute('tabindex', isSingle ? '0' : '-1');
+        tabStages.setAttribute('aria-selected', String(!isSingle));
+        tabStages.setAttribute('tabindex', !isSingle ? '0' : '-1');
+        tabSingle.className = isSingle
+          ? 'goal-tab inline-flex items-center justify-center gap-1.5 px-gutter-md py-2 rounded-full bg-light-primary dark:bg-dark-primary text-light-on-primary dark:text-dark-on-primary font-label text-label-lg transition-colors duration-state-change focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-primary dark:focus-visible:ring-dark-primary'
+          : 'goal-tab inline-flex items-center justify-center gap-1.5 px-gutter-md py-2 rounded-full text-light-on-surface-variant dark:text-dark-on-surface-variant font-label text-label-lg transition-colors duration-state-change focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-primary dark:focus-visible:ring-dark-primary';
+        tabStages.className = !isSingle
+          ? 'goal-tab inline-flex items-center justify-center gap-1.5 px-gutter-md py-2 rounded-full bg-light-primary dark:bg-dark-primary text-light-on-primary dark:text-dark-on-primary font-label text-label-lg transition-colors duration-state-change focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-primary dark:focus-visible:ring-dark-primary'
+          : 'goal-tab inline-flex items-center justify-center gap-1.5 px-gutter-md py-2 rounded-full text-light-on-surface-variant dark:text-dark-on-surface-variant font-label text-label-lg transition-colors duration-state-change focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-primary dark:focus-visible:ring-dark-primary';
+        panelSingle.hidden = !isSingle;
+        panelStages.hidden = isSingle;
+      }
+
+      tabSingle.addEventListener('click', function () { setMode('single'); });
+      tabStages.addEventListener('click', function () { setMode('stages'); });
+
+      var stageCountInput = document.getElementById('stage-count');
+      var stagesContainer = document.getElementById('stages-container');
+      function renderStages() {
+        var count = Math.min(10, Math.max(2, parseInt(stageCountInput.value || '3', 10)));
+        stagesContainer.innerHTML = '';
+        for (var i = 1; i <= count; i++) {
+          var row = document.createElement('div');
+          row.className = 'flex flex-col gap-gutter-sm p-gutter-md rounded-md bg-light-surface-container-low dark:bg-dark-surface-container border border-light-outline-variant dark:border-dark-outline-variant';
+          row.innerHTML =
+            '<div class="flex flex-wrap items-center justify-between gap-2">' +
+              '<div class="flex items-center gap-2 font-label text-label-lg text-light-on-surface dark:text-dark-on-surface">' +
+                '<span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-light-surface-variant dark:bg-dark-surface-variant text-light-primary dark:text-dark-primary font-mono text-label-md">' + i + '</span>' +
+                'Etapa ' + i +
+              '</div>' +
+              '<div class="flex items-center gap-3">' +
+                '<label class="inline-flex items-center gap-1.5 font-body text-body-md text-light-on-surface dark:text-dark-on-surface cursor-pointer">' +
+                  '<input type="radio" name="stage-focus-' + i + '" value="time" checked class="stage-focus-radio text-light-primary dark:text-dark-primary" data-stage="' + i + '">' +
+                  '<span>Tiempo</span>' +
+                '</label>' +
+                '<label class="inline-flex items-center gap-1.5 font-body text-body-md text-light-on-surface dark:text-dark-on-surface cursor-pointer">' +
+                  '<input type="radio" name="stage-focus-' + i + '" value="finish" class="stage-focus-radio text-light-primary dark:text-dark-primary" data-stage="' + i + '">' +
+                  '<span>Solo terminar</span>' +
+                '</label>' +
+              '</div>' +
+            '</div>' +
+            '<div class="grid grid-cols-1 sm:grid-cols-3 gap-gutter-sm">' +
+              '<label class="flex flex-col gap-1"><span class="font-label text-label-md text-light-on-surface-variant dark:text-dark-on-surface-variant">Distancia (km)</span><input type="number" step="0.1" value="' + (25 + i * 5) + '" class="stage-dist w-full px-3 py-1.5 rounded-sm bg-light-surface-container-lowest dark:bg-dark-surface-container-high border border-light-outline-variant dark:border-dark-outline-variant font-mono text-mono-md tabular-nums"></label>' +
+              '<label class="flex flex-col gap-1"><span class="font-label text-label-md text-light-on-surface-variant dark:text-dark-on-surface-variant">Desnivel (m+)</span><input type="number" value="' + (450 + i * 120) + '" class="stage-elev w-full px-3 py-1.5 rounded-sm bg-light-surface-container-lowest dark:bg-dark-surface-container-high border border-light-outline-variant dark:border-dark-outline-variant font-mono text-mono-md tabular-nums"></label>' +
+              '<label id="stage-time-wrap-' + i + '" class="flex flex-col gap-1"><span class="font-label text-label-md text-light-on-surface-variant dark:text-dark-on-surface-variant">Tiempo etapa (hh:mm)</span><input type="text" value="0' + (1 + i) + ':30" placeholder="02:30" class="stage-time w-full px-3 py-1.5 rounded-sm bg-light-surface-container-lowest dark:bg-dark-surface-container-high border border-light-outline-variant dark:border-dark-outline-variant font-mono text-mono-md tabular-nums"></label>' +
+            '</div>';
+          stagesContainer.appendChild(row);
+        }
+
+        document.querySelectorAll('.stage-focus-radio').forEach(function (radio) {
+          radio.addEventListener('change', function () {
+            var idx = radio.getAttribute('data-stage');
+            var wrap = document.getElementById('stage-time-wrap-' + idx);
+            if (wrap) wrap.style.display = radio.value === 'time' ? 'flex' : 'none';
+          });
+        });
+      }
+      stageCountInput.addEventListener('input', renderStages);
+      renderStages();
+
+      var focusRadios = document.querySelectorAll('input[name="goal-focus"]');
+      var targetTimeWrap = document.getElementById('target-time-wrapper');
+      focusRadios.forEach(function (radio) {
+        radio.addEventListener('change', function () {
+          targetTimeWrap.style.display = radio.value === 'time' ? 'grid' : 'none';
+        });
+      });
+
+      document.getElementById('goal-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var name = document.getElementById('goal-name').value.trim() || 'Meta personalizada';
+        var date = document.getElementById('goal-date').value;
+
+        document.getElementById('preview-goal-title').textContent = name;
+
+        if (mode === 'single') {
+          var focus = document.querySelector('input[name="goal-focus"]:checked').value;
+          var timeVal = document.getElementById('target-time').value.trim();
+          var d = document.getElementById('single-distance').value;
+          var el = document.getElementById('single-elevation').value;
+          document.getElementById('preview-goal-badge').textContent = focus === 'time' ? timeVal : 'Terminar';
+          document.getElementById('preview-goal-meta').textContent = date + ' · ' + d + ' km · ' + el + ' m+';
+        } else {
+          var totalD = 0;
+          var totalE = 0;
+          var timedStages = 0;
+          var count = Math.min(10, Math.max(2, parseInt(stageCountInput.value || '3', 10)));
+          document.querySelectorAll('.stage-dist').forEach(function (inp) { totalD += parseFloat(inp.value || '0'); });
+          document.querySelectorAll('.stage-elev').forEach(function (inp) { totalE += parseFloat(inp.value || '0'); });
+          for (var i = 1; i <= count; i++) {
+            var checked = document.querySelector('input[name="stage-focus-' + i + '"]:checked');
+            if (checked && checked.value === 'time') timedStages++;
+          }
+          document.getElementById('preview-goal-badge').textContent = timedStages + '/' + count + ' con tiempo';
+          document.getElementById('preview-goal-meta').textContent = date + ' · ' + totalD.toFixed(1) + ' km · ' + totalE + ' m+ · ' + count + ' etapas';
+        }
+        document.getElementById('goal-saved-msg').classList.remove('hidden');
+      });
+
+      var dayButtons = document.querySelectorAll('.day-toggle');
+      function saveTrainingDays() {
+        var selected = [];
+        dayButtons.forEach(function (b) {
+          if (b.getAttribute('aria-pressed') === 'true') {
+            selected.push(parseInt(b.getAttribute('data-day'), 10));
+          }
+        });
+        try { localStorage.setItem('pulso_training_days', JSON.stringify(selected)); } catch (e) {}
+      }
+      dayButtons.forEach(function (b) {
+        b.addEventListener('click', function () {
+          var active = b.getAttribute('aria-pressed') === 'true';
+          var next = !active;
+          b.setAttribute('aria-pressed', String(next));
+          b.className = next
+            ? 'day-toggle py-2 rounded-md bg-light-primary dark:bg-dark-primary text-light-on-primary dark:text-dark-on-primary font-label text-label-md border border-light-primary dark:border-dark-primary'
+            : 'day-toggle py-2 rounded-md bg-light-surface-container dark:bg-dark-surface-container text-light-on-surface-variant dark:text-dark-on-surface-variant font-label text-label-md border border-light-outline-variant dark:border-dark-outline-variant';
+          saveTrainingDays();
+        });
+      });
+
+      try {
+        var savedAvatar = localStorage.getItem('pulso_user_avatar');
+        var savedName = localStorage.getItem('pulso_user_name');
+        if (savedAvatar) document.querySelectorAll('[data-user-avatar]').forEach(function (img) { img.src = savedAvatar; });
+        if (savedName) {
+          document.querySelectorAll('[data-user-name]').forEach(function (el) { el.textContent = savedName; });
+          document.querySelectorAll('[data-user-avatar]').forEach(function (img) { img.alt = 'Foto de ' + savedName; });
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+
+</body></html>
